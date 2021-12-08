@@ -6,6 +6,7 @@ __pycache__/
 
 # Data directories and zipped files
 *.tar.gz
+*.zip
 Test/
 Train/
 X_forecast/
