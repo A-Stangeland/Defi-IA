@@ -1,0 +1,68 @@
+{
+    "n_estimators": {
+        "type": "Integer",
+        "min": 200,
+        "max": 1500,
+        "prior": "uniform"
+    },
+    "max_depth": {
+        "type": "Integer",
+        "min": 3,
+        "max": 10,
+        "prior": "uniform"
+    },
+    "learning_rate": {
+        "type": "Real",
+        "min": 0.01,
+        "max": 0.3,
+        "prior": "uniform"
+    },
+    "gamma": {
+        "type": "Real",
+        "min": 1e-6,
+        "max": 1e+1,
+        "prior": "log-uniform"
+    },
+    "min_child_weight": {
+        "type": "Real",
+        "min": 1e-6,
+        "max": 1e+1,
+        "prior": "log-uniform"
+    },
+    "max_delta_step": {
+        "type": "Real",
+        "min": 1e-2,
+        "max": 1e+2,
+        "prior": "log-uniform"
+    },
+    "colsample_bylevel": {
+        "type": "Real",
+        "min": 0.2,
+        "max": 1.0,
+        "prior": "uniform"
+    },
+    "colsample_bynode": {
+        "type": "Real",
+        "min": 0.2,
+        "max": 1.0,
+        "prior": "uniform"
+    },
+    "colsample_bytree": {
+        "type": "Real",
+        "min": 0.2,
+        "max": 1.0,
+        "prior": "uniform"
+    },
+    "reg_alpha": {
+        "type": "Real",
+        "min": 1e-6,
+        "max": 1e+1,
+        "prior": "uniform"
+    },
+    "reg_lambda": {
+        "type": "Real",
+        "min": 1e-6,
+        "max": 1e+1,
+        "prior": "uniform"
+    }
+}
