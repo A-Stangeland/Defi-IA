@@ -4,8 +4,11 @@ from skopt.callbacks import CheckpointSaver
 from xgboost import XGBRegressor
 from objective_functions import MAPE, mape_scorer
 from data_processing import load_xgb_data
+import numpy as np
 import argparse
+import pickle
 import json
+import os
 
 def _param_map(param_args):
     param_type = param_args["type"]
@@ -55,5 +58,13 @@ def bayes_search_xgb(
     return model, opt
 
 if __name__ == "__main__":
-    X_train, y_train, X_test = load_xgb_data()
+    data_train, data_test = load_xgb_data()
+    y_train = np.log(1 + data_train["Ground_truth"])
+    X_train = data_train.drop(columns=["Ground_truth", "Id"])
+    X_test = data_test.drop(columns=["Id"])
     model, opt = bayes_search_xgb()
+
+    # Save the model
+    model_name = "xgb_opt.pkl"
+    with open(os.path.join("trained_modls", model_name), "wb") as f:
+        pickle.dump(model, f)
