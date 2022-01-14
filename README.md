@@ -24,4 +24,4 @@ python train.py
 ```
 To generate the dataset from the kaggle data, run `data_processing.py`.
 This script can take a long time to execute, so we have provided the already processed datasets.
-When running `train.py`, you will be asked if you wish to download the datasets, which have a combined size around 65MB.
+When running `train.py`, you will be asked if you wish to download the datasets, which have a combined size of around 65MB.
