@@ -128,10 +128,10 @@ def load_xgb_data(path="data"):
         data_train = pd.read_csv(os.path.join(path, "data_train.csv"))
         data_test = pd.read_csv(os.path.join(path, "data_test.csv"))
 
-    y_train = data_train["Ground_truth"]
-    X_train = data_train.drop(columns="Ground_truth")
-    X_test = data_test
-    return X_train, y_train, X_test
+    # y_train = data_train["Ground_truth"]
+    # X_train = data_train.drop(columns="Ground_truth")
+    # X_test = data_test
+    return data_train, data_test#X_train, y_train, X_test
 
 if __name__ == "__main__":
     data_train, data_test = get_tabular_dataset()
