@@ -116,12 +116,15 @@ def download_dataset(destination="data"):
                                     unzip=True)
 
 def load_xgb_data(path="data"):
-    try:
+    if os.path.exists(os.path.join(path, "data_train.csv")):
         data_train = pd.read_csv(os.path.join(path, "data_train.csv"))
         data_test = pd.read_csv(os.path.join(path, "data_test.csv"))
-    except FileExistsError:
+    else:
         print("Dataset not found.")
         response = input("Do you want to download the dataset? ([y]/n)")
+        if not os.path.exists(path):
+                os.makedirs(path)
+
         if response.lower() in ["y", "yes", ""]:
             download_dataset(dest_path=path)
         
