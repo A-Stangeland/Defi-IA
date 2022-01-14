@@ -17,3 +17,11 @@ conda create --name defi-ia python=3.9
 conda activate defi-ia
 pip install -r requirements.txt
 ```
+# Usage
+To train a model and evaluate it on the test data, run `train.py` by executing the following command:
+```bash
+python train.py
+```
+To generate the dataset from the kaggle data, run `data_processing.py`.
+This script can take a long time to execute, so we have provided the already processed datasets.
+When running `train.py`, you will be asked if you wish to download the datasets, which have a combined size of around 65MB.
