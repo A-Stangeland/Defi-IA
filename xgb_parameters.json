@@ -1,0 +1,9 @@
+{
+    "colsample_bynode": 0.5, 
+    "learning_rate": 0.04640973110054612, 
+    "max_delta_step": 10.0, 
+    "max_depth": 14, 
+    "min_child_weight": 10.0, 
+    "n_estimators": 2107,
+    "verbosity": 3
+}

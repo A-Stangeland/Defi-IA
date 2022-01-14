@@ -1,5 +1,5 @@
 from data_processing import load_xgb_data
-from xgboost_model import train_model
+from xgboost_model import train_model, load_xgb_parameters
 
 import numpy as np
 import pandas as pd
@@ -30,12 +30,7 @@ def main():
     X_train = data_train.drop(columns=["Ground_truth", "Id"])
     X_test = data_test.drop(columns=["Id"])
 
-    xgb_params=dict(
-        n_estimators=100, 
-        max_depth = 5,
-        learning_rate = .1,
-        verbosity=1
-    )
+    xgb_params = load_xgb_parameters("xgb_parameters.json")
     model = train_model(X_train, y_train, xgb_params)
 
     # Save the model
