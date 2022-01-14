@@ -65,6 +65,9 @@ if __name__ == "__main__":
     model, opt = bayes_search_xgb()
 
     # Save the model
+    model_save_path = "trained_models"
+    if not os.path.exists(model_save_path):
+            os.makedirs(model_save_path)
     model_name = "xgb_opt.pkl"
-    with open(os.path.join("trained_modls", model_name), "wb") as f:
+    with open(os.path.join(model_save_path, model_name), "wb") as f:
         pickle.dump(model, f)
