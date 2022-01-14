@@ -4,7 +4,6 @@ from xgboost import XGBRegressor
 from sklearn.model_selection import train_test_split
 import json
 
-from xgboost import XGBRegressor
 
 def load_xgb_parameters(fname):
     with open(fname, mode="r") as f:
@@ -34,6 +33,7 @@ def train_model(
         eval_set = (X_val, y_val)
     else:
         X_train, y_train = X, y
+        early_stopping_rounds = None
 
     model = XGBRegressor(**xgb_params)
     model.fit(X_train, y_train, eval_set=eval_set, early_stopping_rounds=early_stopping_rounds)
