@@ -126,7 +126,7 @@ def load_xgb_data(path="data"):
                 os.makedirs(path)
 
         if response.lower() in ["y", "yes", ""]:
-            download_dataset(dest_path=path)
+            download_dataset(destination=path)
         
         data_train = pd.read_csv(os.path.join(path, "data_train.csv"))
         data_test = pd.read_csv(os.path.join(path, "data_test.csv"))
