@@ -2,7 +2,7 @@
 
 # Results
 Our model achieved a MAPE score of 30.44090 on the private leaderboard of the kaggle competition, placing us 28th in the competition.
-The instructions to reproduce our results are included bellow in the installation section.
+The instructions to reproduce our results are included below in the installation section.
 
 # Installation
 To install the required packages execute the following commands:
